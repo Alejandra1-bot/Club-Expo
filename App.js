@@ -1,18 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TextInput} from 'react-native';
-import Inicio from '../Screen/Inicio/inicio'; 
+import { StyleSheet} from 'react-native';
+
+import AppNavegacion from './Src/Navegation/AppNavegacion';
+
 
 export default function App() {
   return (
-    <View style={estilos.container}>
-      <Text style={{ fontSize: 24, color: "red ", fontWeight: "bold" }}>Bienvenidos a Clud !</Text>
-      <Inicio/>
+    <>
+   
       <StatusBar style="auto" />
-    </View>
+      <AppNavegacion/>
+     
+   </>
   );  
 }
 
-const estilos = StyleSheet.create({
+const style = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#eb0d0dff',

@@ -5,7 +5,13 @@ import CardComponents from "../../components/CardComponents";
 
     export default function Inicio(){
         return(
-          <ScrollView> 
+          <ScrollView>
+            <View style={styles.header}>
+                <Text style={styles.headerTitle}>BIENVENIDOS</Text>
+                <Text style={styles.Subtitle}>Estado <Text style={styles.StatusText}> Habilitado</Text></Text>
+                <Text style={styles.Subtitle}>Selecciona una Opcion</Text>
+             </View> 
+             
          <View style={styles.gridContainer}> 
             <CardComponents
             tittle="Asociados"

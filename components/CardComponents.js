@@ -17,7 +17,7 @@ export default function CardComponents({tittle, description, icon}) {
     )
 }
 
-const styles = Styl45eSheet.create({
+const styles = StyleSheet.create({
     card: {
         width: '45%',
         aLignItems: 'center',
