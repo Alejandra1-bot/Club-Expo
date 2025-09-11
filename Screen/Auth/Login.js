@@ -1,7 +1,6 @@
 import { TextInput, Text, View, StyleSheet, ScrollView,TouchableOpacity } from "react-native";
 import BottonComponent from  "../../components/BottonComponents";
 import { useState } from "react";
-import CardComponents from "../../components/CardComponents";
 
     export default function Login({navigation}){
         const [email, setEmail ]= useState('');
