@@ -1,5 +1,5 @@
 import { createNativeStackNavigator} from '@react-navigation/native-stack'
- import  Inicio from "../../Screen/Inicio/inicio";
+ import  Inicio from "../../../Screen/Inicio/inicio"
  import ActividadesStack from './ActividadesStack';
  import AsociadosStack from './AsociadosStack';
  import PagosStack from './PagosStack';

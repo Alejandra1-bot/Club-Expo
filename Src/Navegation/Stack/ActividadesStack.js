@@ -1,5 +1,5 @@
 import { createNativeStackNavigator} from '@react-navigation/native-stack'
-import ListarActividad from "../../../Screen/Actividades/listarActividad";
+import ListarActividad from "../../../Screen/Actividades/listarActividades";
 import DetalleActividad from "../../../Screen/Actividades/detalleActividad";
 import EditarActividad from "../../../Screen/Actividades/editarActividad";
 

@@ -21,7 +21,7 @@ const style = StyleSheet.create({
     backgroundColor: '#eb0d0dff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  },    
 
 
 

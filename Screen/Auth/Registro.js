@@ -1,30 +1,27 @@
-import { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, Image, ScrollView } from 'react-native';
-import BottonComponent from '../../components/BottonComponents';
+import { useState } from "react";
+import { View, Text, TextInput, StyleSheet, Image, ScrollView } from "react-native";
+import BottonComponent from "../../components/BottonComponents";
 
-export default function Registro({ navigation }) {
-  const [nombre, setNombre] = useState('');
-  const [email, setEmail] = useState('');
-  const [telefono, setTelefono] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmarPassword, setConfirmarPassword] = useState('');
+export default function RegistroAcerias({ navigation }) {
+  const [nombre, setNombre] = useState("");
+  const [email, setEmail] = useState("");
+  const [telefono, setTelefono] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmarPassword, setConfirmarPassword] = useState("");
 
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <View style={styles.container}>
-        
-        {/* Imagen ilustrativa */}
         <Image
-          source={{ uri: 'https://cdn-icons-png.flaticon.com/512/2966/2966486.png' }}
+          source={{ uri: "https://cdn-icons-png.flaticon.com/512/2726/2726554.png" }}
           style={styles.image}
         />
 
-        <Text style={styles.title}>Registrate</Text>
+        <Text style={styles.title}>🔧 Registro Club Acerías</Text>
         <Text style={styles.subtitle}>
-          Regístrate para gestionar tus citas médicas fácilmente
+          Únete a la comunidad industrial registrándote
         </Text>
 
-        {/* Inputs */}
         <TextInput
           style={styles.input}
           placeholder="Nombre completo"
@@ -65,13 +62,15 @@ export default function Registro({ navigation }) {
           onChangeText={setConfirmarPassword}
         />
 
-        {/* Botones */}
-        <BottonComponent title="Registrarse" />
+        <BottonComponent
+          title="Registrarme"
+          style={{ backgroundColor: "#FFB400" }}
+        />
 
         <BottonComponent
-          title="Iniciar Sesión"
-          onPress={() => navigation.navigate('Login')}
-          style={{ backgroundColor: '#6c757d' }}
+          title="Ya tengo cuenta, Iniciar Sesión"
+          onPress={() => navigation.navigate("Login")}
+          style={{ backgroundColor: "#1B262C" }}
         />
       </View>
     </ScrollView>
@@ -81,46 +80,41 @@ export default function Registro({ navigation }) {
 const styles = StyleSheet.create({
   scrollContainer: {
     flexGrow: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   container: {
     flex: 1,
-    backgroundColor: '#F9FBFF',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#F4F4F4",
+    alignItems: "center",
+    justifyContent: "center",
     padding: 20,
   },
   image: {
     width: 120,
     height: 120,
-    marginBottom: 15,
+    marginBottom: 20,
   },
   title: {
-    fontSize: 28,
-    fontWeight: 'bold',
+    fontSize: 26,
+    fontWeight: "bold",
+    color: "#1B262C",
     marginBottom: 6,
-    color: '#0A74DA',
-    textAlign: 'center',
+    textAlign: "center",
   },
   subtitle: {
     fontSize: 14,
-    color: '#555',
+    color: "#393E46",
     marginBottom: 20,
-    textAlign: 'center',
+    textAlign: "center",
   },
   input: {
-    width: '100%',
+    width: "100%",
     padding: 14,
     borderWidth: 1,
-    borderColor: '#d0d7e2',
+    borderColor: "#d9d9d9",
     borderRadius: 12,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     marginBottom: 15,
     fontSize: 16,
-    shadowColor: '#000',
-    shadowOpacity: 0.05,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 4,
-    elevation: 2,
   },
 });

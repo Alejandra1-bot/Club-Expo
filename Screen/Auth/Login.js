@@ -1,94 +1,91 @@
-import { TextInput, Text, View, StyleSheet, ScrollView,TouchableOpacity } from "react-native";
-import BottonComponent from  "../../components/BottonComponents";
 import { useState } from "react";
+import { View, Text, TextInput, StyleSheet, Image } from "react-native";
+import BottonComponent from "../../components/BottonComponents";
 
-    export default function Login({navigation}){
-        const [email, setEmail ]= useState('');
-        const [password, setPassword ]= useState('');
-        const [loading, setLoading ]= useState(false);
-    
-        return(
-            <View style={styles.container}>
-                     <Text style={styles.titulo}>🏥 Citas Médicas</Text>
-      <Text style={styles.subtitulo}>Inicia sesión para continuar</Text>
-                <TextInput
-                style={styles.input}
-                placeholder="Correo Electronico"
-                value={email}
-                onChangeText={setEmail}
-                keyboardType="email-address"
-                autoCapitalize="none"
-                />
+export default function LoginAcerias({ navigation }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-                <TextInput
-                style={styles.input}
-                placeholder="Contraseña"
-                value={password}
-                onChangeText={setPassword}
-                editable={!loading}
-                />
-           
-                <BottonComponent title="Iniciar Sesion"/>
-                <BottonComponent
-                 title="¿No tienes una cuenta? Registrate"
-                 onPress={() => navigation.navigate('Registro')}
-                 style={{ backgroundColor: "##0A2647"}}
-                  />
-            </View>
-        );
+  return (
+    <View style={styles.container}>
+      {/* Imagen ilustrativa de acerías */}
+      <Image
+        source={{
+          uri: "https://cdn-icons-png.flaticon.com/512/2527/2527905.png", // Fábrica industrial
+        }}
+        style={styles.image}
+      />
+
+      <Text style={styles.title}>⚙️ Club de Acerías</Text>
+      <Text style={styles.subtitle}>Accede a tu cuenta</Text>
+
+      {/* Inputs */}
+      <TextInput
+        style={styles.input}
+        placeholder="Correo electrónico"
+        value={email}
+        onChangeText={setEmail}
+        keyboardType="email-address"
+        autoCapitalize="none"
+      />
+
+      <TextInput
+        style={styles.input}
+        placeholder="Contraseña"
+        secureTextEntry
+        value={password}
+        onChangeText={setPassword}
+      />
+
+      {/* Botones */}
+      <BottonComponent
+        title="Iniciar Sesión"
+        style={{ backgroundColor: "#FFB400" }}
+      />
+
+      <BottonComponent
+        title="¿No tienes cuenta? Regístrate"
+        onPress={() => navigation.navigate("Registro")}
+        style={{ backgroundColor: "#1B262C" }}
+      />
+    </View>
+  );
 }
-
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F5F9FF", // Fondo claro con un toque celeste
+    backgroundColor: "#F4F4F4",
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
   },
-  titulo: {
-    fontSize: 28,
+  image: {
+    width: 140,
+    height: 140,
+    marginBottom: 20,
+  },
+  title: {
+    fontSize: 26,
     fontWeight: "bold",
-    color: "#0A74DA", // Azul principal
+    color: "#1B262C",
     marginBottom: 6,
+    textAlign: "center",
   },
-  subtitulo: {
+  subtitle: {
     fontSize: 14,
-    color: "#555",
+    color: "#393E46",
     marginBottom: 25,
-  },
-  form: {
-    width: "100%",
-    backgroundColor: "#fff",
-    padding: 25,
-    borderRadius: 16,
-    shadowColor: "#000",
-    shadowOpacity: 0.05,
-    shadowOffset: { width: 0, height: 3 },
-    shadowRadius: 6,
-    elevation: 3,
+    textAlign: "center",
   },
   input: {
     width: "100%",
-    padding: 12,
+    padding: 14,
     borderWidth: 1,
-    borderColor: "#d0d7e2",
-    borderRadius: 10,
+    borderColor: "#d9d9d9",
+    borderRadius: 12,
+    backgroundColor: "#fff",
     marginBottom: 15,
-    backgroundColor: "#f9f9f9",
-  },
-  linkContainer: {
-    marginTop: 15,
-    alignItems: "center",
-  },
-  link: {
-    fontSize: 14,
-    color: "#444",
-  },
-  linkStrong: {
-    fontWeight: "bold",
-    color: "#0A74DA",
+    fontSize: 16,
   },
 });
-    
